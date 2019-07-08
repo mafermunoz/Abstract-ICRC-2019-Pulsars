@@ -13,7 +13,7 @@
 \author{\speaker{Maria Munoz}\\
         University of Geneva, Geneva, Switzerland\\
         E-mail: \email{maria.munoz@unige.ch}}
-        
+
 \author{Xin Wu\\
         University of Geneva, Geneva, Switzerland}
 \author{Fabio Gargano\\
@@ -55,23 +55,23 @@ Previous searches of pulsars  in  $\gamma$-rays  with space-based experiments ha
 
 \section{Data Selection}
 
-In a previous paper  a method for resolving gamma-ray events detected by DAMPE has been presented \cite{zunlei}, nevertheless for this work a different selection has been used. The reason for using a different selection is to increase our signal statistics at low energies to improve the detection of pulsars. As explained before, pulsars have a a very characteristics light curve and emission occurs at a defined known periodicity different  for each pulsar, therefore if the events detected are mistagged as photons they will over-all not contribute to the pulsar light curve measurements. Instead these events will smear-out into the background. Therefore for pulsar analysis a photon selection with a relatively higher electron contamination is permissible. 
+In a previous paper  a method for resolving gamma-ray events detected by DAMPE has been presented \cite{zunlei}, nevertheless for this work a different selection has been used. The reason for using a different selection is to increase our signal statistics at low energies to improve the detection of pulsars. As explained before, pulsars have a a very characteristics light curve and emission occurs at a defined known periodicity different  for each pulsar, therefore if the events detected are mistagged as photons they will over-all not contribute to the pulsar light curve measurements. Instead these events will smear-out into the background. Therefore for pulsar analysis a photon selection with a relatively higher electron contamination is permissible.
 The steps for the gamma-ray identification are similar to those presented in \cite{zunlei},
 \begin{enumerate}
-	\item electron/proton separation: Using the BGO to search for characteristics signatures of electronic and hadronic shower, the objective is to reject hadrons. Knowing that $\sim 98\%$ of primary cosmic rays are hadrons it is important to reject them as first step. 
+	\item electron/proton separation: Using the BGO to search for characteristics signatures of electronic and hadronic shower, the objective is to reject hadrons. Knowing that $\sim 98\%$ of primary cosmic rays are hadrons it is important to reject them as first step.
 	\item Use of the PSD as anti-coincidence shield, gamma-rays leave no signal in the PSD. This is essential for electron rejection.
-	\item Search for tracks in the STK that interact after the first tungsten layer. To eliminate electrons and because of this cut we select only photons that convert within the STK. 
+	\item Search for tracks in the STK that interact after the first tungsten layer. To eliminate electrons and because of this cut we select only photons that convert within the STK.
 	\item Alongside the previous cuts, we also apply geometrical cuts to reject events that arrive from the sides or bottom of the detector. Searching for a well contained shower in the BGO for reliable energy measurement and photon directionality.
-	
+
 \end{enumerate}
 
-On top of the steps for photon identification, quality cuts are applied. First, events that cross the South Atlantic Anomaly are rejected. Lastly, the DAMPE instrument has a complex trigger system and an interacting particle can trigger one or more triggers, differentiation of this triggers is also taken into consideration. For this work we will focus on the Low Energy Trigger (LET) and the High Energy Trigger (HET). The HET has no pre-scale and as its name suggest is more efficient at higher energies. The LET is pre-scaled, meaning only a fraction of the events are stored,  and it varies depending on the position of the DAMPE with respect to Earth. The Low Energy Trigger has a lenient logic than the High Energy Trigger and therefore it has a pre-scaling dependent on the latitude, where for the low latitudes from -20 to 20 the pre-scale is set to 8 and for the other latitudes the pre-scale corresponds to 64. 
+On top of the steps for photon identification, quality cuts are applied. First, events that cross the South Atlantic Anomaly are rejected. Lastly, the DAMPE instrument has a complex trigger system and an interacting particle can trigger one or more triggers, differentiation of this triggers is also taken into consideration. For this work we will focus on the Low Energy Trigger (LET) and the High Energy Trigger (HET). The HET has no pre-scale and as its name suggest is more efficient at higher energies. The LET is pre-scaled, meaning only a fraction of the events are stored,  and it varies depending on the position of the DAMPE with respect to Earth. The Low Energy Trigger has a lenient logic than the High Energy Trigger and therefore it has a pre-scaling dependent on the latitude, where for the low latitudes from -20 to 20 the pre-scale is set to 8 and for the other latitudes the pre-scale corresponds to 64.
 
 
 %using the properties of the PSD as  an anti-coincidence  shield and further looking in the calorimeter for the signature  hadronic and electromagnetic showers to reject charge  firstly heavy ions.  Further for electron separation we search for  events that leave no track in the  STK before  the first tungsten layers therefore looking only for converted  photons.
 The  result of this  selection can be observed in Figure \ref{eff_area}, where results are shown for the two different triggers. The dependency on energy and the incoming angle  of the photon in detector coordinates on the effective area are indicated.
 
-The overall data set studied corresponds  $\sim 39$ months of observations. For  this period of time a total of  354,985 events have been detected. In Figure \ref{map} the gamma=ray sky as observed by DAMPE with the current selection for $\sim 39$ months is presented with an energy range from 1 GeV to 100 GeV 
+The overall data set studied corresponds  $\sim 39$ months of observations. For  this period of time a total of  354,985 events have been detected. In Figure \ref{map} the gamma=ray sky as observed by DAMPE with the current selection for $\sim 39$ months is presented with an energy range from 1 GeV to 100 GeV
 
 
 % The electron acceptance for this selection is shown in the same plot.% To calculate the electron contamination we need to consider the different gamma-ray contributors and the electron cosmic-ray spectrum, then compare them to evaluate the electron contamination.
@@ -106,36 +106,36 @@ Pulsars are highly magnetized and rapidly rotating neutron stars. Neutron stars 
 
 In this section the methods applied  to data for the light-curve calculation and the energy spectrum are presented.
 
- 
- 
+
+
 \subsection{Pulsars Folding}
 The different ways to detect a pulsar are dependent on the acceptance of the instrument and on its orbit. In the case of DAMPE we do a search based on known pulsars and  then use timing models calculated by other experiments, normally in different wavelength such as radio,x-ray or even gamma  rays. The pulsar timing solutions (ephemerides) of interest in this work were all provided by David A. Smith (Private Communication, 2017).
 
-%The algorithm to arrive to this is described in the diagram sown in Figure \ref{steps_pulsars}, in the previous the photon selection is explained. The  next step is to select the events of interests  depending on their position, for this we use the known position of sources and first apply a $3 \times 3  \text{ deg} ^2$ window around it. 
+%The algorithm to arrive to this is described in the diagram sown in Figure \ref{steps_pulsars}, in the previous the photon selection is explained. The  next step is to select the events of interests  depending on their position, for this we use the known position of sources and first apply a $3 \times 3  \text{ deg} ^2$ window around it.
 
 From the data selected as explained in the previous section, we select events of interest for each pulsars, around their known position. The required information includes the timestamp and position of the satellite where each event is detected, and the known position in the sky for the different sources, this position is given by other experiments mainly radio searches.
-This subset is then barycentered, meaning we convert the DAMPE timestamps that are given in Mission Elapsed Time (MET) to Coordinated Universal Time (UTC) to finally convert to Barycentric Dynamical Time (TDB) this is done to correct for relativistic effects related  to  time dilatation this time variations are very small but important and consider effects such as Jupiter's and the sun's orbit. To do this it is important  to have precise arrival time stamps of the photons detected and its geographical coordinates. The position of the known source also need to be precise, therefore proper motion i.e. motion of the pulsar is also considered. 
-Finally we  fold the TDB times with the ephemerides given by other experiments, this last step is done using the TEMPO2 software package \cite{tempo2}.   The reason to use this  type of software is that the pulsars are considered to be decelerating and this can be modeled giving rotation parameters that can be applied later  to different experiments, nevertheless the  rotation parameters can be very complex for different  pulsars in particular of those that undergo "glitches" irregular changes in the rotation parameters and TEMPO2 validity has been widely proved \cite{2catalogfermi} \cite{geminga_fermi}. Because of the need of time precision we also need to take into consideration leap seconds. Leap seconds are also taken into consideration, and since the start of the MET ($01/01/2013$) 2 leap seconds have been added. 
+This subset is then barycentered, meaning we convert the DAMPE timestamps that are given in Mission Elapsed Time (MET) to Coordinated Universal Time (UTC) to finally convert to Barycentric Dynamical Time (TDB) this is done to correct for relativistic effects related  to  time dilatation this time variations are very small but important and consider effects such as Jupiter's and the sun's orbit. To do this it is important  to have precise arrival time stamps of the photons detected and its geographical coordinates. The position of the known source also need to be precise, therefore proper motion i.e. motion of the pulsar is also considered.
+Finally we  fold the TDB times with the ephemerides given by other experiments, this last step is done using the TEMPO2 software package \cite{tempo2}.   The reason to use this  type of software is that the pulsars are considered to be decelerating and this can be modeled giving rotation parameters that can be applied later  to different experiments, nevertheless the  rotation parameters can be very complex for different  pulsars in particular of those that undergo "glitches" irregular changes in the rotation parameters and TEMPO2 validity has been widely proved \cite{2catalogfermi} \cite{geminga_fermi}. Because of the need of time precision we also need to take into consideration leap seconds. Leap seconds are also taken into consideration, and since the start of the MET ($01/01/2013$) 2 leap seconds have been added.
 
 
 %Consider for timing  that GPS time  doesn't  contain leap seconds. Up to know  there are 37 leap seconds  that need to be added.
-%The leap seconds occur at a giving time, since the launch of DAMPE one  leap second  has been added,therefore  the corrections and time trnasformation are dpeendent  in the  
+%The leap seconds occur at a giving time, since the launch of DAMPE one  leap second  has been added,therefore  the corrections and time trnasformation are dpeendent  in the
 
 \subsubsection{Light-curve Validation}
 Validation of the pulsars detection is required, for this we perform a statistical test that will  allows to understand the significance of  the pulsation, the statistical test used is called the H-test and it is widely used in the pulsar community.
 %The  second consist in a direct comparison with the Fermi experiment. Fermi is a dedicated $\gamma$-ray experiment  and has been in orbit for over  10 years,  during this time two pulsar catalogues have been published with over 100 pulsars, all of this with searches from 100 MeV to energies above 100 GeV.
- 
-This test has the capability to evaluate both the timing model and the quality of the data used.  The H-test was presented for its application in the use of pulsars in 1989,a further  modification of this test was presented in \cite{h-test}.  
+
+This test has the capability to evaluate both the timing model and the quality of the data used.  The H-test was presented for its application in the use of pulsars in 1989,a further  modification of this test was presented in \cite{h-test}.
 The test consists in searching for uniformity in the circle.  Meaning the search for  periodicity on  a phase. From the H-Test we obtain an H-Value that can be translated to a probability.
- 
- 
- 
+
+
+
 
 
 %For being able to compute the phase we use the pulsar timing solutions (ephemeris) of interest in combination with the timestamp and position recorded for each event, and the known position in the sky for the different sources, normally measured by other experiments. In this case all the ephemerides  were provided by David A. Smith (Private Communication, 2017).
 
 \subsection{Energy Spectrum}
-From the  events detected we require to convert between the measured distribution of energy and direction measured by DAMPE to the truth flux of gamma-rays on the sky. In order to do this we use the Instruments Response Functions (IRFs). The IRFs  can be  separated into three parts: the effective area $A_{eff}$, the Point Spread Function PSF and the Energy Redistribution Function ERF. To produce the response we depend on reliable GEANT4 simulations of the instrument. 
+From the  events detected we require to convert between the measured distribution of energy and direction measured by DAMPE to the truth flux of gamma-rays on the sky. In order to do this we use the Instruments Response Functions (IRFs). The IRFs  can be  separated into three parts: the effective area $A_{eff}$, the Point Spread Function PSF and the Energy Redistribution Function ERF. To produce the response we depend on reliable GEANT4 simulations of the instrument.
 
 The IRF is defined as below:
 
@@ -149,18 +149,18 @@ The Effective area is therefore given as function of the truth energy and truth 
 \end{equation}
 The generation area will depend on the  MC and depending on the MC we use, the integration on the solid angle will also vary. The effective Area results can be observed on Figure \ref{eff_area}.
 
-For the energy redistribution function we define the measured energy as function of the true energy and true incoming angle ($\theta$). Once this is done, the correction is applied by using a Bayesian iterative method, where the response matrix is obtained from the normalize redistribution function. 
+For the energy redistribution function we define the measured energy as function of the true energy and true incoming angle ($\theta$). Once this is done, the correction is applied by using a Bayesian iterative method, where the response matrix is obtained from the normalize redistribution function.
 
-Finally, we also need to calculate live time. For this we applied a $ \pm 60^{\circ}$ window around the source of interest and collect the amount of seconds the DAMPE has spend in this area. The choice of the window is given the Field of View of DAMPE at anytime.  
+Finally, we also need to calculate live time. For this we applied a $ \pm 60^{\circ}$ window around the source of interest and collect the amount of seconds the DAMPE has spend in this area. The choice of the window is given the Field of View of DAMPE at anytime.
 
 
 \section{Results}
-In this  sections  the  results of the analyzed pulsars will be presented. At the moment more than 20 pulsars have been  studied with DAMPE data set, nevertheless here only five are presented. The pulsars presented for this work were selected based on the number of events detected for each pulsar. The chosen pulsars have the most counts  in a  two year observation period within a ROI of $1^\circ$ around the known position of the source. However the analysis is applied  for a ROI of $3^\circ$,and for the folding of the pulsars we use 2 years of data, from the 1st of January 2016 till the 1st of January 2018.  Nevertheless for the  energy spectrum we use 39 months of data, from the 1st of January 2016 til the  31st of March 2019. The current limitation on the 2 years of data for the  light-curve calculation is due to the validity of the ephemerides. 
+In this  sections  the  results of the analyzed pulsars will be presented. At the moment more than 20 pulsars have been  studied with DAMPE data set, nevertheless here only five are presented. The pulsars presented for this work were selected based on the number of events detected for each pulsar. The chosen pulsars have the most counts  in a  two year observation period within a ROI of $1^\circ$ around the known position of the source. However the analysis is applied  for a ROI of $3^\circ$,and for the folding of the pulsars we use 2 years of data, from the 1st of January 2016 till the 1st of January 2018.  Nevertheless for the  energy spectrum we use 39 months of data, from the 1st of January 2016 til the  31st of March 2019. The current limitation on the 2 years of data for the  light-curve calculation is due to the validity of the ephemerides.
 
 %% this area is too big to be able to determine if the detected photons are coming from one source or  multiple sources this is the case mainly when the source is located in the galactic plane,therefore a smaller area is consider to reduce the contamination by other sources.
  The reason for this is that  the background or other $\gamma$-ray sources will not contribute  to the phase shape but with a bigger window it increases our statistics that help us create more reliable  light curves. The five pulsars presented here, have a sigma greater than five, confirming the detection of the pulsation.
- 
-The five pulsars studied were Vela, Geminga, J1709-4429, Crab and J0007+73703, and the results of the analysis can be observed in Figures \ref{vela}, \ref{geminga}, \ref{j1709}, \ref{crab} and \ref{j0007} respectively. 
+
+The five pulsars studied were Vela, Geminga, J1709-4429, Crab and J0007+73703, and the results of the analysis can be observed in Figures \ref{vela}, \ref{geminga}, \ref{j1709}, \ref{crab} and \ref{j0007} respectively.
 
 %%%J0835-4510
 \begin{figure}
@@ -241,7 +241,7 @@ The five pulsars studied were Vela, Geminga, J1709-4429, Crab and J0007+73703, a
 \section{Conclusions and future scope}
 With 24 months of  data, we showed DAMPE's ability to measure gamma-rays in an energy range from 1-100GeV.
 We also show its timing capabilities for the identification and analysis of pulsars.
-In the future we aim to perform spectral analysis in the pulse and off-pulse regions, observe the evolution of light curves  as a function of energy. 
+In the future we aim to perform spectral analysis in the pulse and off-pulse regions, observe the evolution of light curves  as a function of energy.
 We also have shown the broad possibilities for research and study of gamma-ray sources such as the galactic plane, SNRs, AGNs, GRBs among others.
 
 
@@ -278,7 +278,7 @@ MMS expresses her gratitude to David A. Smith for providing the ephemerides appl
   Astrophys.\ J.\ Suppl.\  {\bf 208}, 17 (2013)
   %%doi:10.1088/0067-0049/208/2/17
   [arXiv:1305.4385 [astro-ph.HE]]
-  
+
  \bibitem{h-test}
 de Jager, O.C, Büsching, I
 ''The H-test probability distribution revisited: Improved sensitivity''
@@ -299,13 +299,13 @@ J.~P.~Halpern, E.~V.~Gotthelf, F.~Camilo, D.~J.~Helfand and S.~M.~Ransom,
   Astrophys.\ J.\  {\bf 612}, 398 (2004)
   %%doi:10.1086/422409
   [astro-ph/0404312].
-  
+
 \bibitem{zunlei}
 Xu, Z.{\it et al.},
 "An algorithm to resolve γ-rays from charged cosmic rays with DAMPE"
 arxiv.:1712.02939
 
-  
+
 \end{thebibliography}
 
 
