@@ -47,13 +47,14 @@
 The DArk Matter Particle Explorer (DAMPE) is China's first astronomical satellite launched the 17th of December 2015. DAMPE has been successfully taking data for over 3.5 years.
 The satellite has a sun-synchronous orbit at an altitude of  500 km and  has a period of 95 minutes i.e. 15 orbits per day.
 The instrument consists of four sub-detectors, from top to bottom: A Plastic Scintillator Detector (PSD) used as an anti-coincidence shield for photon identification and for charge measurement of heavy ions.
-A Silicon TracKer(STK) composed by six double layers of silicon: the first three layers are inter-layered  by a tungsten layer to promote pair conversion of gamma-rays.  A BGO Calorimeter for energy measurements and separation of electromagnetic/hadronic showers with a depth of $\sim 32$ radiations lengths. Finally a NeUtron Detector (NUD) for  hadronic identification \cite{dampe-mision}.
+A Silicon TracKer(STK) composed by six double layers of silicon: the first three layers are inter-layered  by a tungsten layer to promote pair conversion of gamma-rays.  A BGO Calorimeter for energy measurements and separation of electromagnetic/hadronic showers with a depth of $\sim 32$ radiations lengths. Finally a NeUtron Detector (NUD) for  hadronic identification \cite{dampe_mission}.
 
 One of the main scientific objectives of DAMPE is the detection and study of  high energy gamma-rays (above 1 GeV). One of the first detailed gamma-ray study using the DAMPE data focuses on pulsars. Pulsars are highly magnetized rotating neutron stars of great interest because of their characteristics. The time  properties of pulsars makes them very reliable sources for timing calibration. The observation of Pulsars by DAMPE contributes to two key calibration points of the instrument, the confirmation of gamma-ray detection and the  evaluation of the time  performance in DAMPE.
 Previous searches of pulsars  in  $\gamma$-rays  with space-based experiments have been made for example  with   EGRET,AGILE and  FERMI\cite{2catalogfermi}, the latter still contributing to the discovery of $\gamma$-ray pulsars.
 
 
 \section{Data Selection}
+\label{selection}
 
 In a previous paper  a method for resolving gamma-ray events detected by DAMPE has been presented \cite{zunlei}, nevertheless for this work a different selection has been used. The reason for using a different selection is to increase our signal statistics at low energies to improve the detection of pulsars. As explained before, pulsars have a a very characteristics light curve and emission occurs at a defined known periodicity different  for each pulsar, therefore if the events detected are mistagged as photons they will over-all not contribute to the pulsar light curve measurements. Instead these events will smear-out into the background. Therefore for pulsar analysis a photon selection with a relatively higher electron contamination is permissible.
 The steps for the gamma-ray identification are similar to those presented in \cite{zunlei},
@@ -71,7 +72,7 @@ On top of the steps for photon identification, quality cuts are applied. First, 
 %using the properties of the PSD as  an anti-coincidence  shield and further looking in the calorimeter for the signature  hadronic and electromagnetic showers to reject charge  firstly heavy ions.  Further for electron separation we search for  events that leave no track in the  STK before  the first tungsten layers therefore looking only for converted  photons.
 The  result of this  selection can be observed in Figure \ref{eff_area}, where results are shown for the two different triggers. The dependency on energy and the incoming angle  of the photon in detector coordinates on the effective area are indicated.
 
-The overall data set studied corresponds  $\sim 39$ months of observations. For  this period of time a total of  354,985 events have been detected. In Figure \ref{map} the gamma=ray sky as observed by DAMPE with the current selection for $\sim 39$ months is presented with an energy range from 1 GeV to 100 GeV
+The overall data set studied corresponds  $\sim 39$ months of observations. For  this period of time a total of  354,985 events have been detected. %In Figure \ref{map} the gamma=ray sky as observed by DAMPE with the current selection for $\sim 39$ months is presented with an energy range from 1 GeV to 100 GeV
 
 
 % The electron acceptance for this selection is shown in the same plot.% To calculate the electron contamination we need to consider the different gamma-ray contributors and the electron cosmic-ray spectrum, then compare them to evaluate the electron contamination.
@@ -127,6 +128,7 @@ Validation of the pulsars detection is required, for this we perform a statistic
 
 This test has the capability to evaluate both the timing model and the quality of the data used.  The H-test was presented for its application in the use of pulsars in 1989,a further  modification of this test was presented in \cite{h-test}.
 The test consists in searching for uniformity in the circle.  Meaning the search for  periodicity on  a phase. From the H-Test we obtain an H-Value that can be translated to a probability.
+Once the we can determine that there is pulsation, we also need to verify the shape of the pulsation, for this we use the results from \cite{2catalogfermi}, and in the energy band of interest our results seem to be consistent.  
 
 
 
@@ -135,27 +137,38 @@ The test consists in searching for uniformity in the circle.  Meaning the search
 %For being able to compute the phase we use the pulsar timing solutions (ephemeris) of interest in combination with the timestamp and position recorded for each event, and the known position in the sky for the different sources, normally measured by other experiments. In this case all the ephemerides  were provided by David A. Smith (Private Communication, 2017).
 
 \subsection{Energy Spectrum}
-From the  events detected we require to convert between the measured distribution of energy and direction measured by DAMPE to the truth flux of gamma-rays on the sky. In order to do this we use the Instruments Response Functions (IRFs). The IRFs  can be  separated into three parts: the effective area $A_{eff}$, the Point Spread Function PSF and the Energy Redistribution Function ERF. To produce the response we depend on reliable GEANT4 simulations of the instrument.
-
-The IRF is defined as below:
-
-\begin{equation}
-IRF=A_{eff}(E,\theta)\times{PSF}(\delta\theta;E,\theta)\times ERF (E';E,\theta)
-\end{equation}
-
-The Effective area is therefore given as function of the truth energy and truth theta. To calculate the effective area we use the following formula
+From the  events detected we require to convert them between the measured distribution of energy and direction measured by DAMPE to the truth flux of gamma-rays on the sky. In order to do this we use the so-called Instruments Response Functions (IRFs). The IRFs  can be  separated into three parts: 
+\begin{itemize}
+    \item Effective Area $A_{eff}(E,\theta)$, as function of the true energy $E$ and the true incoming angle $\theta$.  To calculate the effective area we use the following formula
 \begin{equation}
 \frac{\textbf{Events Passed the Selection}}{\textbf{All Events Generated}}\times {\textbf{Generation Area}}
-\end{equation}
-The generation area will depend on the  MC and depending on the MC we use, the integration on the solid angle will also vary. The effective Area results can be observed on Figure \ref{eff_area}.
+\end{equation} 
+where the generation area will depend on the  MC and depending on the MC we use, the integration on the solid angle will also vary. The effective Area results can be observed on Figure \ref{eff_area}.
+    \item Point Spread Function PSF $(\delta\theta;E,\theta)$, characterizes the error in the reconstruction of the direction $\delt \theta=\theta'-\theta $. Where $\theta'$ and $\theta$ are the reconstructed incoming angle and the true incoming angle respectively.
+    \item Energy Redistribution Function $ERF (E';E,\theta)$, For the energy redistribution function we define the measured energy as function of the true energy and true incoming angle ($\theta$). Once this is done, the correction is applied by using a Bayesian iterative method, where the response matrix is obtained from the normalize redistribution function.
+    
+\end{itemize}
 
-For the energy redistribution function we define the measured energy as function of the true energy and true incoming angle ($\theta$). Once this is done, the correction is applied by using a Bayesian iterative method, where the response matrix is obtained from the normalize redistribution function.
+To produce the response we depend on reliable GEANT4 simulations of the instrument for the  different particles of interest.The true values are recovered from simulations. Also the IRFs will be dependent on the selection cuts applied to the data. 
 
-Finally, we also need to calculate live time. For this we applied a $ \pm 60^{\circ}$ window around the source of interest and collect the amount of seconds the DAMPE has spend in this area. The choice of the window is given the Field of View of DAMPE at anytime.
+%The IRF is defined as below:
+
+%\begin{equation}
+%IRF=A_{eff}(E,\theta)\times{PSF}(\delta\theta;E,\theta)\times ERF %(E';E,\theta)
+%\end{equation}
+
+%The Effective area is therefore given as function of the truth energy and truth theta. To calculate the effective area we use the following formula
+%\begin{equation}
+%\frac{\textbf{Events Passed the Selection}}{\textbf{All Events %Generated}}\times {\textbf{Generation Area}}
+%\end{equation}
+%The generation area will depend on the  MC and depending on the MC we use, the integration on the solid angle will also vary. The effective Area results can be observed on Figure \ref{eff_area}.
+
+
+Finally, we also need to calculate livetime of DAMPE. For this we applied a $ \pm 60^{\circ}$ window around the source of interest and collect the amount of seconds the DAMPE has spend in this area. The choice of the window is given by  Field of View of DAMPE at anytime as a result of the photon selection explained in section \ref{selection}.
 
 
 \section{Results}
-In this  sections  the  results of the analyzed pulsars will be presented. At the moment more than 20 pulsars have been  studied with DAMPE data set, nevertheless here only five are presented. The pulsars presented for this work were selected based on the number of events detected for each pulsar. The chosen pulsars have the most counts  in a  two year observation period within a ROI of $1^\circ$ around the known position of the source. However the analysis is applied  for a ROI of $3^\circ$,and for the folding of the pulsars we use 2 years of data, from the 1st of January 2016 till the 1st of January 2018.  Nevertheless for the  energy spectrum we use 39 months of data, from the 1st of January 2016 til the  31st of March 2019. The current limitation on the 2 years of data for the  light-curve calculation is due to the validity of the ephemerides.
+In this  sections  the  results of the analyzed pulsars will be presented. At the moment more than 20 pulsars have been  studied with DAMPE data set, nevertheless here only five are presented. The pulsars presented for this work were selected based on the number of events detected for each pulsar. The chosen pulsars have collected the most photons in a  two year observation period within a ROI of $1^\circ$ around the known position of the source. However the analysis is applied  for a ROI of $3^\circ$,and for the folding of the pulsars we use 2 years of data, from the 1st of January 2016 till the 1st of January 2018.  Nevertheless for the  energy spectrum we use 39 months of data, from the 1st of January 2016 til the  31st of March 2019. The current limitation on the 2 years of data for the  light-curve calculation is due to the validity of the ephemerides.
 
 %% this area is too big to be able to determine if the detected photons are coming from one source or  multiple sources this is the case mainly when the source is located in the galactic plane,therefore a smaller area is consider to reduce the contamination by other sources.
  The reason for this is that  the background or other $\gamma$-ray sources will not contribute  to the phase shape but with a bigger window it increases our statistics that help us create more reliable  light curves. The five pulsars presented here, have a sigma greater than five, confirming the detection of the pulsation.
@@ -170,23 +183,23 @@ The five pulsars studied were Vela, Geminga, J1709-4429, Crab and J0007+73703, a
 %%\hspace{\fill}
 %%\centering
 %\subfloat[]{\includegraphics [width=0.3\textwidth, keepaspectratio]{J0835-4510H_value_3deg.png}}
-\subfloat[]{\includegraphics [width=0.3\textwidth, keepaspectratio]{J0835-4510position.png}}
+\subfloat[2D Projection]{\includegraphics [width=0.3\textwidth, keepaspectratio]{J0835-4510position.png}}
 %\includegraphics[scale=0.7]{images/j0007.png}
-\caption{Results of the pulsar J0835-4510, a)  shows its characteristic  light curve. The pulsating detection has a $ \sigma =54.71$ b)Energy Spectrum as measured for this analysis by DAMPE in red from 2 GeV to 100 GeV. The blue points correspond to FERMI measurements taken from \cite{vela_fermi}. }\label{vela}
+\caption{Results of the pulsar J0835-4510, a)  shows its characteristic  light curve. The pulsating detection has a $ \sigma =54.71$ b)Energy Spectrum as measured for this analysis by DAMPE in red from 2 GeV to 100 GeV. The blue points correspond to FERMI measurements taken from \cite{vela_fermi}, c) 2D projection of photons detected within a $ 3^{\circ}$ ROI around the pulsar of interest.}\label{vela}
 \end{figure}
 
 %%J0633+1746
 \begin{figure}
 \centering
 \subfloat[Phase information]{\includegraphics [width=0.5\textwidth,, keepaspectratio]{J0633+1746phase_3deg.png}}
-\subfloat[Energy Flux]{\includegraphics [width=0.3\textwidth,, keepaspectratio]{flux_geminga.png}}
+\subfloat[Energy Flux]{\includegraphics [width=0.3\textwidth,, keepaspectratio]{flux_J0633+1746.png}}
 %\hspace{\fill}
 %\centering
 %\subfloat[]{\includegraphics [width=0.3\textwidth, keepaspectratio]{J0633+1746H_value_3deg.png}}
-\subfloat[]{\includegraphics [width=0.3\textwidth, keepaspectratio]{J0633+1746position.png}}
+\subfloat[2D Projection]{\includegraphics [width=0.3\textwidth, keepaspectratio]{J0633+1746position.png}}
 %\includegraphics[scale=0.7]{images/j0007.png}
 
-\caption{Results of the pulsar J0633+1746 also known as Geminga, a)  shows its characteristic  light curve. b) Energy Spectrum from 2GeV to 100 GeV.}\label{geminga}
+\caption{Results of the pulsar J0633+1746 also known as Geminga, a)  shows its characteristic  light curve. b) Energy Spectrum from 2 GeV to 100 GeV, c) 2D projection of photons detected within a $ 3^{\circ}$ ROI around the pulsar of interest.}\label{geminga}
 \end{figure}
 
 
@@ -198,9 +211,9 @@ The five pulsars studied were Vela, Geminga, J1709-4429, Crab and J0007+73703, a
 %\hspace{\fill}
 %\centering
 %\subfloat[]{\includegraphics [width=0.3\textwidth, keepaspectratio]{J1709-4429H_value_3deg.png}}
-\subfloat[Image]{\includegraphics [width=0.3\textwidth, keepaspectratio]{J1709-4429position.png}}
+\subfloat[2D Projection]{\includegraphics [width=0.3\textwidth, keepaspectratio]{J1709-4429position.png}}
 %\includegraphics[scale=0.7]{images/j0007.png}
-\caption{Results of the pulsar J1709-4429, a)  shows its characteristic  light curve. b) Energy Spectrum from 2GeV to 100 GeV.}\label{j1709}
+\caption{Results of the pulsar J1709-4429, a)  shows its characteristic  light curve. b) Energy Spectrum from 2 GeV to 100 GeV, c) 2D projection of photons detected within a $ 3^{\circ}$ ROI around the pulsar of interest.}\label{j1709}
 \end{figure}
 
 
@@ -208,26 +221,26 @@ The five pulsars studied were Vela, Geminga, J1709-4429, Crab and J0007+73703, a
 \begin{figure}
 \centering
 \subfloat[Phase information]{\includegraphics [width=0.5\textwidth,, keepaspectratio]{J0534+2200phase_3deg.png}}
-\subfloat[Energy Flux]{\includegraphics [width=0.3\textwidth,, keepaspectratio]{flux_crab.png}}
+\subfloat[Energy Flux]{\includegraphics [width=0.3\textwidth,, keepaspectratio]{flux_J0534+2200.png}}
 %\hspace{\fill}
 %\centering
 %\subfloat[]{\includegraphics [width=0.3\textwidth, keepaspectratio]{J0534+2200H_value_3deg.png}}
-\subfloat[]{\includegraphics [width=0.3\textwidth, keepaspectratio]{J0534+2200position.png}}
+\subfloat[2D Projection]{\includegraphics [width=0.3\textwidth, keepaspectratio]{J0534+2200position.png}}
 %\includegraphics[scale=0.7]{images/j0007.png}
-\caption{Results of the Crab (J0534+2200), a)  shows its characteristic  light curve. b) Energy Spectrum from 2 GeV to 100 GeV. For the energy spectrum we need to consider that this will also contain the nebula and not just the pulsar spectrum}\label{crab}
+\caption{Results of the Crab (J0534+2200), a)  shows its characteristic  light curve. b) Energy Spectrum from 2 GeV to 100 GeV. For the energy spectrum we need to consider that this will also contain the nebula and not just the pulsar spectrum, c) 2D projection of photons detected within a $ 3^{\circ}$ ROI around the pulsar of interest.}\label{crab}
 \end{figure}
 
 %%J0007+7303
 \begin{figure}
 \centering
 \subfloat[Phase information]{\includegraphics [width=0.5\textwidth,, keepaspectratio]{J0007+7303phase_3deg.png}}
-\subfloat[Energy Flux]{\includegraphics [width=0.3\textwidth,, keepaspectratio]{flux_j0007+7303.png}}
+\subfloat[Energy Flux]{\includegraphics [width=0.3\textwidth,, keepaspectratio]{flux_J0007+7303.png}}
 %\hspace{\fill}
 %\centering
 %\subfloat[]{\includegraphics [width=0.3\textwidth, keepaspectratio]{J0007+7303H_value_3deg.png}}
-\subfloat[]{\includegraphics [width=0.3\textwidth, keepaspectratio]{J0007+7303position.png}}
+\subfloat[2D Projection]{\includegraphics [width=0.3\textwidth, keepaspectratio]{J0007+7303position.png}}
 %\includegraphics[scale=0.7]{images/j0007.png}
-\caption{Results of the pulsar J0007+7303, a)  shows its characteristic  light curve. b) Energy Spectrum from 2GeV to 100 GeV.}
+\caption{Results of the pulsar J0007+7303, a)  shows its characteristic  light curve. b) Energy Spectrum from 2 GeV to 100 GeV, c) 2D projection of photons detected within a $ 3^{\circ}$ ROI around the pulsar of interest.}
 \label{j0007}
 \end{figure}
 
@@ -298,7 +311,7 @@ J.~P.~Halpern, E.~V.~Gotthelf, F.~Camilo, D.~J.~Helfand and S.~M.~Ransom,
 
 \bibitem{zunlei}
 Xu, Z.{\it et al.},
-"An algorithm to resolve γ-rays from charged cosmic rays with DAMPE"
+"An algorithm to resolve $\gamma$-rays from charged cosmic rays with DAMPE"
 arxiv.:1712.02939
 
 
